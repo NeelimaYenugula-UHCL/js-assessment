@@ -113,7 +113,15 @@ arraysAnswers = {
    * @returns {Number} The count of the number of times the number item appeared in arr.
    */
   count: function count(arr, item) {
-    
+     var count = 0, i, length = arr.length;
+
+    for (i=0; i < length; i++) {
+      if (arr[i] === item) {
+        count++;
+      }
+    }
+
+    return count;
   },
 
   /**
@@ -123,6 +131,20 @@ arraysAnswers = {
    * @returns {Number[]} An array of numbers that appear in arr more than once.
    */
   duplicates: function duplicates(arr) {
+    var found = {};
+    var dups = [], i, length = arr.length;
+
+    for (i=0; i < length; i++) {
+      found[arr[i]] = found[arr[i]] ? found[arr[i]] + 1 : 1;
+    }
+
+    for (var item in found) {
+      if (found.hasOwnProperty(item) && found[item] > 1) {
+        dups.push(item);
+      }
+    }
+
+    return dups;
       },
 
   /**
@@ -144,6 +166,16 @@ arraysAnswers = {
    * @returns {Number[]} A new array of numbers which represent the indices of target in arr.
    */
   findAllOccurrences: function findAllOccurrences(arr, target) {
+var newArr = [],i,length = arr.length;
+
+    for (i = 0;i < length; i++) {
+      if (arr[i] === target) {
+        newArr.push(i);
+      }
+    }
+
+    return newArr;
+  }
 
   },
 };
