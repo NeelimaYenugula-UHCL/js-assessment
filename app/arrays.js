@@ -8,8 +8,7 @@ arraysAnswers = {
    */
   indexOf: function indexOf(arr, item) {
     // Implement a function, that returns the 0 based index of an element in an array.
-    Number index = arr.indexOf(item);
-    return index;
+    return arr.indexOf(item);    
   },
 
   /**
