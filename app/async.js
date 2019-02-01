@@ -7,7 +7,7 @@ asyncAnswers = {
    * @returns {then: function} A promise like object containing a then property.
    */
   async: function async(value) {
-  var df = $.defer();
+  var df = $.Deferred();
     setTimeout(function() {
       df.resolve(value);
     }, 10);
@@ -27,7 +27,7 @@ asyncAnswers = {
    * @returns {then: function} A promise like object containing a then property.
    */
   manipulateRemoteData: function manipulateRemoteData(url) {
-var df = $.defer();
+var df = $.Deferred();
 
     $.ajax(url).then(function(response) {      
       df.resolve(response);
