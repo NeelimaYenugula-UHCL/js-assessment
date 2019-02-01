@@ -29,8 +29,8 @@ arraysAnswers = {
    * @returns {Number[]} A new array containing all numbers from arr except item.
    */
   remove: function remove(arr, item) {
-    arr.splice(arr.indexOf(item),1);
-    return arr;
+    var newArr = arr.splice(arr.indexOf(item),1);
+    return newArr;
   },
 
   /**
@@ -88,7 +88,7 @@ arraysAnswers = {
    * @returns {Number[]} A new array, with elements from arr1 and arr2 in that order.
    */
   concat: function concat(arr1, arr2) {
-    arr1.concat(arr2);
+   return arr1.concat(arr2);
   },
 
   /**
@@ -136,13 +136,11 @@ arraysAnswers = {
     for (i=0; i < length; i++) {
       found[arr[i]] = found[arr[i]] ? found[arr[i]] + 1 : 1;
     }
-
     for (var item in found) {
       if (found.hasOwnProperty(item) && found[item] > 1) {
         dups.push(item);
       }
     }
-
     return dups;
       },
 
@@ -153,8 +151,8 @@ arraysAnswers = {
    * @returns {Number[]} A new array of numbers that contains the elements of arr squared.
    */
   square: function square(arr) {
-    arr.map(x => x * x);
-    return arr;
+   var newArr = arr.map(x => x * x);
+    return newArr;
   },
 
   /**
